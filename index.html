@@ -25,244 +25,221 @@
             border-radius: 15px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.8);
             box-sizing: border-box;
+            position: relative;
         }
-        .progress-bar {
-            width: 100%;
-            height: 8px;
-            background-color: #444;
-            border-radius: 5px;
-            margin-bottom: 30px;
-            overflow: hidden;
-        }
-        .progress-fill {
-            height: 100%;
-            background-color: #ce93d8;
-            width: 0%;
-            transition: width 0.3s ease;
-        }
+        
+        /* 首頁樣式 */
+        #intro-section { text-align: center; }
+        .intro-title { color: #ce93d8; font-size: 28px; font-weight: bold; margin-bottom: 20px; letter-spacing: 2px; border-bottom: 1px solid #444; padding-bottom: 15px; }
+        .intro-text { font-size: 18px; line-height: 2; color: #ccc; margin-bottom: 40px; text-align: left; background: #222; padding: 20px; border-radius: 10px; border-left: 4px solid #ce93d8; }
+        
+        .progress-bar { width: 100%; height: 8px; background-color: #444; border-radius: 5px; margin-bottom: 30px; overflow: hidden; }
+        .progress-fill { height: 100%; background-color: #ce93d8; width: 0%; transition: width 0.3s ease; }
         .question-title { color: #ce93d8; font-size: 22px; font-weight: bold; margin-bottom: 15px; letter-spacing: 1px; }
         .story-text { font-size: 18px; line-height: 1.8; margin-bottom: 30px; padding-left: 20px; border-left: 4px solid #ce93d8; white-space: pre-wrap; }
         .choices { display: flex; flex-direction: column; gap: 15px; }
-        button { background-color: #424242; color: white; border: 2px solid #555; padding: 15px 20px; font-size: 16px; border-radius: 10px; cursor: pointer; transition: all 0.2s ease; text-align: left; line-height: 1.5; }
-        button:hover { background-color: #ce93d8; color: #1a1a1a; border-color: #ce93d8; transform: translateX(5px); }
         
-        /* 🌟 全新升級：結局卡片視覺樣式 🌟 */
+        button { background-color: #424242; color: white; border: 2px solid #555; padding: 15px 20px; font-size: 16px; border-radius: 10px; cursor: pointer; transition: all 0.2s ease; text-align: left; line-height: 1.5; font-family: inherit; }
+        button:hover { background-color: #ce93d8; color: #1a1a1a; border-color: #ce93d8; transform: translateX(5px); }
+        .btn-center { text-align: center; display: block; width: 100%; font-size: 20px; font-weight: bold; padding: 20px; background-color: #ce93d8; color: #1a1a1a; }
+        .btn-center:hover { transform: scale(1.02); background-color: #ba68c8; }
+
+        /* 結局卡片視覺樣式 */
         #result-section { background-color: #f4f1ea; padding: 30px; border-radius: 15px; color: #333; }
-        .result-header { text-align: center; font-size: 28px; font-weight: bold; color: #d32f2f; margin-bottom: 30px; letter-spacing: 2px; }
+        .result-header { text-align: center; font-size: 24px; font-weight: bold; color: #757575; margin-bottom: 20px; letter-spacing: 1px; }
         
         .fate-card {
-            background-color: white;
-            border-radius: 10px;
-            padding: 25px;
-            margin-bottom: 40px;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-            /* 動畫初始狀態 */
-            opacity: 0;
-            transform: translateY(30px);
-            animation: fadeInUp 1s forwards;
+            background-color: white; border-radius: 10px; padding: 25px; margin-bottom: 30px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+            opacity: 0; transform: translateY(40px);
+            animation: fadeInUp 1.5s cubic-bezier(0.2, 0.8, 0.2, 1) forwards; 
+            animation-delay: 0.5s;
         }
         
-        /* 命運紅底白字大標 */
         .fate-title {
-            background-color: #e53935;
-            color: white;
-            display: inline-block;
-            padding: 8px 20px;
-            font-size: 26px;
-            font-weight: bold;
-            transform: rotate(-2deg);
-            margin-bottom: 20px;
-            box-shadow: 2px 4px 10px rgba(229, 57, 53, 0.3);
+            background-color: #d32f2f; color: white; display: inline-block; padding: 10px 20px;
+            font-size: 26px; font-weight: bold; transform: rotate(-2deg); margin-bottom: 20px;
+            box-shadow: 2px 4px 10px rgba(211, 47, 47, 0.3); letter-spacing: 1px;
         }
 
-        /* Hashtag 標籤 */
         .tags-container { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 20px; }
-        .hashtag {
-            background-color: white; color: #e53935;
-            padding: 5px 12px; border-radius: 20px;
-            font-weight: bold; font-size: 16px;
-            border: 2px solid #e53935;
-            box-shadow: 2px 2px 0px #e53935;
-        }
+        .hashtag { background-color: white; color: #d32f2f; padding: 5px 12px; border-radius: 20px; font-weight: bold; font-size: 16px; border: 2px solid #d32f2f; box-shadow: 2px 2px 0px #d32f2f; }
 
-        /* 玩家遭遇的情境框 (仿紙膠帶感) */
-        .player-story {
-            background-color: #fef9e7;
-            padding: 20px;
-            border-left: 5px solid #ffca28;
-            font-size: 18px;
-            line-height: 1.6;
-            margin-bottom: 20px;
-            position: relative;
-        }
+        .player-story { background-color: #fef9e7; padding: 20px; border-left: 5px solid #ffca28; font-size: 18px; line-height: 1.6; margin-bottom: 20px; color: #333; }
+        
+        .real-history { background-color: #f5f5f5; border-top: 2px dashed #bdbdbd; padding: 20px; margin-top: 20px; border-radius: 0 0 10px 10px; }
+        .real-title { font-size: 20px; font-weight: bold; color: #1a1a1a; margin-bottom: 15px; border-left: 4px solid #424242; padding-left: 10px; }
+        .real-text { font-size: 17px; line-height: 1.8; color: #424242; text-align: justify; }
 
-        /* 真實事件揭曉區 */
-        .real-history {
-            background-color: #f5f5f5;
-            border-top: 2px dashed #ccc;
-            padding: 20px;
-            margin-top: 20px;
-            border-radius: 0 0 10px 10px;
-        }
-        .real-title { font-size: 20px; font-weight: bold; color: #424242; margin-bottom: 10px; }
-        .real-text { font-size: 16px; line-height: 1.6; color: #555; }
+        .btn-restart { background-color: #424242; color: white; text-align: center; font-weight: bold; display: block; width: 100%; border: none; margin-top: 10px; }
+        .btn-restart:hover { background-color: #1a1a1a; transform: translateY(-2px); }
 
-        .btn-restart { background-color: #d32f2f; color: white; text-align: center; font-weight: bold; display: block; width: 100%; margin-top: 30px; border: none; }
-        .btn-restart:hover { background-color: #b71c1c; transform: scale(1.02); color: white; }
-
-        /* 🌟 慢慢浮現的動畫關鍵影格 🌟 */
-        @keyframes fadeInUp {
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
+        @keyframes fadeInUp { to { opacity: 1; transform: translateY(0); } }
     </style>
 </head>
 <body>
 
 <div id="game-container">
-    <div class="progress-bar" id="pb-container"><div id="progress" class="progress-fill"></div></div>
-    
-    <div id="quiz-section">
+    <div id="intro-section">
+        <div class="intro-title">【歡迎登入地球系統】</div>
+        <div class="intro-text">
+            系統提示：你即將以一個「全新的人類」身分登入社會。<br>
+            在這裡，沒有人知道你的性別、長相與名字。<br><br>
+            但你很快就會發現，這個看似自由的世界，其實充滿了隱形的「規則」與「陷阱」。接下來的這一天，請憑著你的直覺做出選擇。<br><br>
+            祝你好運，希望能平安度過這一天。
+        </div>
+        <button class="btn-center" onclick="startGame()">▶ 開始生存測驗</button>
+    </div>
+
+    <div id="quiz-section" style="display: none;">
+        <div class="progress-bar"><div id="progress" class="progress-fill"></div></div>
         <div id="q-title" class="question-title">載入中...</div>
         <div id="q-text" class="story-text"></div>
         <div id="choices" class="choices"></div>
     </div>
 
     <div id="result-section" style="display: none;">
-        <div class="result-header">🛑 你的生存檔案已建檔</div>
-        <div style="text-align: center; margin-bottom: 30px; font-size: 18px; font-weight: bold;">
-            你剛剛做出的每一個日常選擇<br>在歷史上都曾真實發生過...
-        </div>
-        
+        <div class="result-header">系統根據你的選擇，結算了最終命運</div>
         <div id="result-content"></div>
-
-        <button class="btn-restart" onclick="restartGame()">重新反思一次</button>
+        <button class="btn-restart" onclick="location.reload()">↺ 重新登入，體驗不同命運</button>
     </div>
 </div>
 
 <script>
-    // 📖 題庫區 (維持五關不變)
     const questions = [
         {
             title: "🌤️ 關卡一：早晨的衣櫃",
-            text: "今天是學校的便服日。你剛起床，打開衣櫃準備挑選今天要穿的衣服。\n\n衣櫃裡有兩件你最常穿的 T-shirt，你要選哪一件？",
+            text: "早晨陽光灑進房間。今天是學校的便服日，打開衣櫃，你憑著直覺會拿起哪一件衣服？",
             options: [
-                { text: "A. 穿上那件亮眼的「粉紅色」短T", caseType: "pink" },
-                { text: "B. 選安全牌、低調的「深藍色」素T，不想引人注目", caseType: "blue" }
+                { text: "A. 今天心情很好，想穿一件色彩鮮豔、看起來充滿活力的衣服！", caseType: "pink" },
+                { text: "B. 今天想走低調路線，隨手抓一件深色系的素面衣服套上。", caseType: "blue" }
             ]
         },
         {
-            title: "🏫 關卡二：下課的走廊",
-            text: "下課了，你想去上廁所。但走廊上聚集了一群平常喜歡模仿你講話、嘲笑你動作的同學。\n\n鐘聲剛響，你會怎麼做？",
+            title: "🪞 關卡二：出門前的鏡子",
+            text: "出門前，你照了照鏡子，整理自己的頭髮。你的頭髮長長了，是不是該剪短？",
             options: [
-                { text: "A. 假裝沒看到，勇敢走過去上廁所", caseType: "rose_brave" },
-                { text: "B. 覺得害怕，決定憋到上課鐘響沒人時再去", caseType: "rose_hide" }
+                { text: "A. 我喜歡短髮。", caseType: "hair_cut" },
+                { text: "B. 我想留長髮。", caseType: "hair_keep" }
             ]
         },
         {
-            title: "🌙 關卡三：晚歸的抉擇",
-            text: "晚上九點，補習班終於下課了。你疲憊地背著書包準備回家。\n\n眼前有兩條路，你會選擇哪一條？",
+            title: "🏫 關卡三：走廊的相遇",
+            text: "下課時間，走廊上聚集了一群平常講話比較大聲、很愛開別人玩笑的同學。你剛好需要經過那裡去上廁所，你會怎麼做？",
             options: [
-                { text: "A. 走明亮的大馬路（要多繞 15 分鐘）", caseType: "night_safe" },
-                { text: "B. 走沒有路燈的捷徑小巷（5 分鐘就到家）", caseType: "night_danger" }
+                { text: "A. 「管他的，我做我自己。」不理會那些眼光，大方地直接走過去。", caseType: "rose_brave" },
+                { text: "B. 「多一事不如少一事...」不想引起注意或惹麻煩，決定繞遠路或晚點再去。", caseType: "rose_hide" }
             ]
         },
         {
-            title: "📚 關卡四：週末的圖書館",
-            text: "週末下午，你在圖書館看書。突然，一個不認識的成年男子試圖把你拉到沒有人的角落。你嚇得掙脫並躲到樓上，但他一直死死尾隨，讓你不敢跑到一樓櫃檯求救。\n\n事後這名男子被警察抓到時，竟然大言不慚地反咬：「是因為這個學生在圖書館裡太吵，我才過去找她理論的！」\n\n聽到他這麼說，你會怎麼想？",
+            title: "📚 關卡四：圖書館的陌生人",
+            text: "週末在圖書館，你找了一個安靜的角落看書。這時，一個不認識的成年人刻意坐到你旁邊，一直盯著你看，甚至越靠越近，讓你覺得很不自在。你的第一反應是？",
             options: [
-                { text: "A. 陷入自我懷疑：「是不是我翻書或走路真的太吵了？難怪他會這麼生氣...」", caseType: "library_doubt" },
-                { text: "B. 覺得非常荒謬：「這根本是轉移焦點的藉口！做錯事的明明就是他！」", caseType: "library_truth" }
+                { text: "A. 「可能只是我想太多了？」不想把氣氛弄得很尷尬，默默忍耐低頭繼續看書。", caseType: "library_doubt" },
+                { text: "B. 「這感覺不對勁。」相信自己的直覺，立刻收好包包，換到一樓人多的櫃檯旁。", caseType: "library_truth" }
             ]
         },
         {
-            title: "🏋️ 關卡五：公園的突發狀況",
-            text: "你在公園運動，一個陌生人突然靠近，一邊說「你好壯/身材真好」，一邊伸手不斷摸你的手臂和胸口。你當下嚇得腦袋一片空白，只能僵在原地，勉強擠出禮貌的微笑說：「請不要這樣。」\n\n事後，有人質疑你：「你為什麼當下不直接大叫或把對方推開？是不是其實你也沒有很不願意？」",
+            title: "🌙 關卡五：晚歸的路線",
+            text: "晚上九點，終於結束了一天的行程，帶著疲憊的身軀準備回家。這時候你通常會選擇哪種路線？",
             options: [
-                { text: "A. 陷入自責：「對啊，我怎麼那麼懦弱？大家一定會覺得是我沒反抗的錯...」", caseType: "freeze_doubt" },
-                { text: "B. 堅定反駁：「突然遇到危險時『大腦當機』是人類正常的生理防衛機制！不反抗絕對不等於同意！」", caseType: "freeze_truth" }
+                { text: "A. 「安全第一」，寧願多走15分鐘的遠路，也要沿著明亮的大馬路走。", caseType: "night_safe" },
+                { text: "B. 「好累，想趕快回家！」選擇只要5分鐘就能到家的安靜小巷捷徑。", caseType: "night_danger" }
+            ]
+        },
+        {
+            title: "🏋️ 關卡六：危機的瞬間",
+            text: "電影裡的主角遇到危險時，總是能瞬間帥氣地反擊。如果你在現實生活中，突然遇到極度驚嚇、或是被陌生人觸碰身體的瞬間，你覺得自己會怎麼反應？",
+            options: [
+                { text: "A. 「我應該會下意識地大聲尖叫，或是用力把對方推開逃跑！」", caseType: "freeze_doubt" },
+                { text: "B. 「我可能會嚇到不知所措，腦袋一片空白，僵在原地無法動彈。」", caseType: "freeze_truth" }
             ]
         }
     ];
 
-    // 🌟 全新升級：卡片式結構資料庫 🌟
     const historicalCases = {
         pink: {
-            title: "被顏色框住的自由",
-            tags: ["#性別刻板印象", "#言語嘲笑", "#顏色沒有性別"],
-            playerStory: "你只是穿上了喜歡的粉紅色，卻遭到同學無情的指指點點與嘲笑，讓你覺得穿衣服變成一件充滿壓力的事情。",
-            realTitle: "這件事真實發生在他身上：加拿大九年級男孩",
-            realText: "2007 年，加拿大一位九年級男孩因為開學穿了粉紅背心上學，遭到嚴重霸凌。後來引發了全校串聯穿粉紅色的『粉紅衫事件』。顏色不該成為霸凌的理由。"
+            title: "被顏色剝奪的自由", tags: ["#性別刻板印象", "#言語嘲笑", "#顏色沒有性別"],
+            playerStory: "你只是想穿色彩鮮豔的衣服展現活力，卻遭到旁人無情的指指點點與嘲笑，讓你覺得連「選衣服」都變成一件充滿壓力的事情。",
+            realTitle: "【歷史新聞檔案：粉紅衫男孩的眼淚】",
+            realText: "『只是穿了喜歡的顏色，錯了嗎？』2007年，加拿大一名九年級男孩開學首日穿著粉紅背心，竟慘遭同學無情嘲笑與霸凌。這件事讓人心碎地反問：為什麼這社會連讓我們『選擇顏色』的自由都要剝奪？"
         },
         blue: {
-            title: "隱形的期待框架",
-            tags: ["#低調也受害", "#完美受害者", "#錯的不是衣服"],
-            playerStory: "你刻意選擇低調安全的衣服，以為這樣就不會惹麻煩，但危險依然悄悄靠近。你才發現，有時候問題根本不在你身上。",
-            realTitle: "這件事真實發生在他們身上：性侵受害者",
-            realText: "社會常說「穿得太少才會引來危險」。但全球巡迴的《性侵受害者當時穿什麼》特展中，展出的全是長袖、毛衣甚至兒童睡衣。無論穿著多麼保守，都可能成為目標。錯的永遠是加害者！"
+            title: "被隱形的完美受害者", tags: ["#低調也受害", "#完美受害者", "#錯的不是衣服"],
+            playerStory: "你刻意選擇低調安全的衣服，以為這樣就不會惹麻煩。但在現實社會中，危險依然悄悄靠近。你才發現，有時候問題根本不在你身上。",
+            realTitle: "【社會專題報導：被隱形的完美受害者】",
+            realText: "『穿得低調，就不會遇到危險嗎？』許多人以為只要穿保守的衣服就能逃過一劫。但在全球震驚的《性侵受害者當時穿什麼》展覽中，掛滿了平凡的長袖睡衣與制服。這殘酷的真相告訴我們：危險從不在於你穿了什麼，錯的永遠只有加害者。"
+        },
+        hair_cut: {
+            title: "廁所門口的異樣眼光", tags: ["#外貌審查", "#性別氣質", "#空間排除"],
+            playerStory: "你只是喜歡短髮，穿著比較中性。但當你走進公共廁所時，卻常常被人上下打量，甚至有阿姨退出去看門牌，大聲質疑『這裡不是女廁嗎？』。你明明只是做自己，卻被當成入侵者。",
+            realTitle: "【社會新聞檔案：短髮女孩的日常困境】",
+            realText: "『我只是剪了短髮，為什麼連上廁所都要被審查？』社會對「女生該有什麼樣子」有著嚴格的刻板印象。網路上許多留著日系短髮、打扮中性的女性分享，她們常在女廁遭到驅趕與無禮打量。這種無形的「性別檢查」，讓日常空間變成了充滿壓力的戰場。"
+        },
+        hair_keep: {
+            title: "對抗體制的沉重代價", tags: ["#服儀規定", "#體制壓迫", "#勇敢做自己"],
+            playerStory: "你只是單純想把頭髮留長。但在現實的體制中，這個平凡的決定，卻可能為你引來無止盡的刁難與惡意。你發現，原來做自己需要面對這麼龐大的壓力。",
+            realTitle: "【歷史新聞檔案：長髮男警的無聲抗爭】",
+            realText: "『難道警察的專業，是取決於頭髮的長度嗎？』台灣曾有一位男警葉繼元，堅持蓄留長髮，卻被記了36次申誡、考績吃丙，甚至差點被免職。他勇敢打官司抗爭卻敗訴，背後承受了體制與同事之間無形的霸凌。單打獨鬥對抗僵化的性別體制，面臨的是龐大的壓迫。"
         },
         rose_brave: {
-            title: "勇敢做自己卻受傷",
-            tags: ["#性別氣質", "#校園死角", "#惡意推擠"],
-            playerStory: "你勇敢地走過走廊，卻因為氣質與大眾期待不同，遭受到惡意的推擠與嘲諷，連最基本的下課時間都充滿危機。",
-            realTitle: "這件事真實發生在他身上：葉永鋕 (玫瑰少年)",
-            realText: "屏東高樹國中的葉永鋕，因為氣質陰柔，在校園中常面臨霸凌。真實世界中，許多勇敢做自己的孩子，每天都在承受巨大的惡意與受傷的風險。"
+            title: "勇敢做自己卻滿身傷", tags: ["#性別氣質", "#校園死角", "#惡意推擠"],
+            playerStory: "你勇敢地走過走廊，卻因為性別氣質與大眾期待不同，遭受到惡意的推擠與嘲諷，連最基本的下課時間都充滿危機。",
+            realTitle: "【歷史新聞檔案：來不及長大的玫瑰少年】",
+            realText: "『他只是想上廁所，卻再也回不了家。』2000年，屏東高樹國中的葉永鋕，因為溫柔的性別氣質，長期在校園遭受惡意嘲笑。為了躲避恐懼，他只敢在快上課時獨自去廁所，最終不幸倒臥血泊離世。這起悲劇讓全台灣痛心疾首，也促成了性別平等教育法的誕生。"
         },
         rose_hide: {
-            title: "恐懼的下課十分鐘",
-            tags: ["#不敢上廁所", "#性別氣質", "#無聲的求救"],
+            title: "恐懼的下課十分鐘", tags: ["#不敢上廁所", "#性別氣質", "#無聲的求救"],
             playerStory: "為了躲避同學的嘲笑，你連想上廁所都不敢去，只能恐懼地憋著尿，祈禱鐘聲趕快響起。",
-            realTitle: "這件事真實發生在他身上：葉永鋕 (玫瑰少年)",
-            realText: "2000 年，葉永鋕因為常被同學脫褲子嘲笑，只敢在快上課沒人時去上廁所，最後不幸在廁所發生意外離世。上廁所本該是最基本的需求，為何成了恐懼？"
+            realTitle: "【歷史新聞檔案：來不及長大的玫瑰少年】",
+            realText: "『他只是想上廁所，卻再也回不了家。』2000年，屏東高樹國中的葉永鋕，因為溫柔的性別氣質，長期在校園遭受惡意嘲笑。為了躲避恐懼，他只敢在快上課時獨自去廁所，最終不幸倒臥血泊離世。這起悲劇讓全台灣痛心疾首，也促成了性別平等教育法的誕生。"
         },
         night_safe: {
-            title: "犧牲時間換取安全",
-            tags: ["#空間權力", "#走夜路的恐懼", "#為什麼是我要躲"],
+            title: "犧牲時間換取安全", tags: ["#空間權力", "#走夜路的恐懼", "#為什麼是我要躲"],
             playerStory: "為了安全，你不得不犧牲自己的休息時間，多走 15 分鐘繞遠路回家。你心中充滿無奈，卻覺得理所當然。",
-            realTitle: "這件事真實發生在她身上：彭婉如",
-            realText: "社會總教導我們要「走明亮的路」，但為什麼我們必須犧牲自己的體力來換取安全？彭婉如女士的事件讓我們反思，無論性別，每個人都該擁有「平安走夜路」的權利。"
+            realTitle: "【歷史新聞檔案：無法平安回家的那一夜】",
+            realText: "『我們什麼時候才能有一條安全回家的路？』1996年，長期為婦女權益奔走的彭婉如女士，在深夜搭乘計程車後不幸遇害。這起悲痛的案件點燃了社會怒火：無論是走小巷還是大馬路，無論性別，『平安走夜路』本該是基本人權，絕不該是一種奢望！"
         },
         night_danger: {
-            title: "無法平安走完的捷徑",
-            tags: ["#夜間安全", "#空間權力", "#為什麼是我要躲"],
+            title: "無法走完的危險捷徑", tags: ["#夜間安全", "#空間權力", "#為什麼是我要躲"],
             playerStory: "你只是想早點回家休息，選擇了比較暗的捷徑，卻因為環境的昏暗而提心吊膽，甚至遭遇了危險的尾隨。",
-            realTitle: "這件事真實發生在她身上：彭婉如",
-            realText: "1996 年，致力於婦女權益的彭婉如女士在深夜搭車時不幸遇害。安全回家不該是一種奢望，也不該因為選擇了「捷徑」就被認為是自己不小心。"
+            realTitle: "【歷史新聞檔案：無法平安回家的那一夜】",
+            realText: "『我們什麼時候才能有一條安全回家的路？』1996年，彭婉如女士在深夜搭車後不幸遇害。這起悲痛的案件點燃了社會怒火：無論性別，『平安走夜路』本該是基本人權，絕不該因為選擇了『捷徑』，就被社會責怪是自己不小心！"
         },
         library_doubt: {
-            title: "被轉移焦點的惡意",
-            tags: ["#責怪受害者", "#情緒勒索", "#錯的不是你"],
-            playerStory: "遇到危險時，你被對方的怒吼嚇到了，甚至開始懷疑「是不是我真的太吵了」，把對方的騷擾合理化為自己的錯。",
-            realTitle: "這件事真實發生在她身上：萬華圖書館女學生",
-            realText: "在真實的尾隨案件中，加害者被逮時辯稱「是女學生太吵才想理論」。加害者常會捏造藉口把錯推給受害者，讓你產生自我懷疑，甚至不敢求救。請記住，錯的絕對不是你！"
+            title: "被轉移焦點的惡意", tags: ["#責怪受害者", "#情緒勒索", "#錯的不是你"],
+            playerStory: "遇到危險時，你陷入了自我懷疑，覺得『是不是我真的做錯了什麼』，甚至差點把對方的尾隨騷擾合理化為自己的錯。",
+            realTitle: "【社會新聞真實檔案：圖書館尾隨案的荒謬藉口】",
+            realText: "『是她太吵，我才想過去找她理論的！』萬華東園圖書館曾發生一起令人發指的尾隨騷擾案。加害者落網後，竟試圖用『女學生太吵』來轉移焦點。這種極度惡劣的『責怪受害者（Victim-Blaming）』手段，往往讓受害人在恐懼中更陷入深深的自責。記住，遇到惡意，錯的絕對不是你！"
         },
         library_truth: {
-            title: "識破謊言的勇敢",
-            tags: ["#拒絕情緒勒索", "#錯的是加害者", "#勇敢求救"],
-            playerStory: "你沒有被對方的怒氣騙倒，清楚知道他用「你太吵」作為藉口，掩飾自己尾隨騷擾的惡劣行徑。",
-            realTitle: "這件事真實發生在她身上：萬華圖書館女學生",
-            realText: "在真實案件中，加害者就是用「是女學生太吵」來合理化行為。你識破了這句謊言！這提醒我們：加害者常會用「是你自己的錯」來包裝犯罪，千萬不要被騙了！"
+            title: "識破謊言的勇敢", tags: ["#拒絕情緒勒索", "#錯的是加害者", "#勇敢求救"],
+            playerStory: "你沒有被不舒服的氣氛騙倒，清楚知道那是對方的惡意，並且勇敢地對外尋求幫助。",
+            realTitle: "【社會新聞真實檔案：圖書館尾隨案的荒謬藉口】",
+            realText: "『是她太吵，我才想過去找她理論的！』萬華東園圖書館曾發生一起令人發指的尾隨騷擾案。加害者落網後，竟試圖用『女學生太吵』來推卸責任。你成功識破了這種惡劣的『責怪受害者』手段！記住，加害者常會用謊言包裝犯罪，無論藉口再多，錯的永遠是加害者！"
         },
         freeze_doubt: {
-            title: "陷入自責的恐懼",
-            tags: ["#大腦當機", "#完美受害者", "#不反抗不等於同意"],
-            playerStory: "遇到騷擾的當下你僵住了，事後面對別人的質疑，你深深陷入自責，覺得「是不是因為我沒大聲反抗，大家會覺得是我活該？」",
-            realTitle: "這件事真實發生在他身上：網紅「館長」陳之漢",
-            realText: "2020年，以強悍著稱的「館長」遭遇狂粉撫摸。就連武術高強的他，當下的反應也是「愣住、沒有反擊」。這證明了遇到危險沒有反抗，是大腦震驚時的正常生理反應，絕對不是同意！"
+            title: "陷入自責的恐懼空白", tags: ["#大腦當機", "#完美受害者", "#不反抗不等於同意"],
+            playerStory: "你以為遇到危險時自己能大叫反擊，但當事情真的發生，你發現自己僵在原地、完全發不出聲音。事後，你陷入了深深的自責...",
+            realTitle: "【社會專題報導：當強者也陷入恐懼的空白】",
+            realText: "『你這麼壯，為什麼不打回去？』2020年，以強悍武術著稱的網紅『館長』遭遇狂粉連續撫摸騷擾，當下的他也只能愣在原地。心理學證實，遇到危機時『大腦當機（Tonic Immobility）』是真實的防衛本能。連館長都會僵住，我們憑什麼苛責受害者沒有大聲反抗？不反抗絕對不等於同意！"
         },
         freeze_truth: {
-            title: "理解生理防衛機制",
-            tags: ["#大腦當機", "#完美受害者", "#不反抗不等於同意"],
-            playerStory: "你清楚知道，在突發的恐懼下，人類的大腦會瞬間空白、身體僵硬。你明白這不是懦弱，也不代表你願意接受騷擾。",
-            realTitle: "這件事真實發生在他身上：網紅「館長」陳之漢",
-            realText: "你說的完全正確！2020年，以強悍著稱的「館長」遭遇狂粉撫摸時，當下也是「愣住、沒反擊」。這打破了社會迷思：連館長都會嚇到僵住，遇到危機時的「大腦當機」是正常防衛機制，錯的永遠只有加害者！"
+            title: "理解防衛機制的真相", tags: ["#大腦當機", "#完美受害者", "#不反抗不等於同意"],
+            playerStory: "你非常了解自己。在突發的恐懼下，人類的大腦確實會瞬間空白、身體僵硬。你明白這不是懦弱，也不代表你願意接受騷擾。",
+            realTitle: "【社會專題報導：當強者也陷入恐懼的空白】",
+            realText: "你預測得完全正確！2020年，以強悍武術著稱的網紅『館長』遭遇狂粉連續撫摸騷擾，當下的他也只能愣在原地。心理學證實，遇到危機時『大腦當機（Tonic Immobility）』是真實的防衛本能。連館長都會僵住，我們憑什麼苛責受害者沒有大聲反抗？不反抗絕對不等於同意！"
         }
     };
 
     let currentQuestion = 0;
     let userChoices = []; 
+
+    function startGame() {
+        document.getElementById('intro-section').style.display = 'none';
+        document.getElementById('quiz-section').style.display = 'block';
+        renderQuestion();
+    }
 
     function renderQuestion() {
         const progress = ((currentQuestion) / questions.length) * 100;
@@ -296,34 +273,20 @@
 
     function showResult() {
         document.getElementById('quiz-section').style.display = 'none';
-        document.getElementById('pb-container').style.display = 'none'; // 隱藏原進度條
-        
-        // 更改背景色讓結局頁面更有氣氛
         document.getElementById('game-container').style.backgroundColor = 'transparent';
         document.getElementById('game-container').style.boxShadow = 'none';
-        
         document.getElementById('result-section').style.display = 'block';
 
+        const finalChoice = userChoices[Math.floor(Math.random() * userChoices.length)];
+        const data = historicalCases[finalChoice];
+        
+        let tagsHtml = '';
+        data.tags.forEach(tag => { tagsHtml += `<div class="hashtag">${tag}</div>`; });
+
         const resultContent = document.getElementById('result-content');
-        resultContent.innerHTML = ''; 
-
-        userChoices.forEach((choice, index) => {
-            const data = historicalCases[choice];
-            
-            // 產生 Hashtags HTML
-            let tagsHtml = '';
-            data.tags.forEach(tag => { tagsHtml += `<div class="hashtag">${tag}</div>`; });
-
-            // 🌟 這裡控制每一張卡片「延遲浮現」的時間 🌟
-            // 第一張立刻出現，第二張等0.8秒，第三張等1.6秒...
-            const animationDelay = index * 0.8;
-
-            const card = document.createElement('div');
-            card.className = 'fate-card';
-            card.style.animationDelay = `${animationDelay}s`;
-            
-            card.innerHTML = `
-                <div class="fate-title">你的命運是... ${data.title}</div>
+        resultContent.innerHTML = `
+            <div class="fate-card">
+                <div class="fate-title">你的命運是...<br>${data.title}</div>
                 <div class="tags-container">${tagsHtml}</div>
                 
                 <div class="player-story">
@@ -334,23 +297,9 @@
                     <div class="real-title">📜 ${data.realTitle}</div>
                     <div class="real-text">${data.realText}</div>
                 </div>
-            `;
-            resultContent.appendChild(card);
-        });
+            </div>
+        `;
     }
-
-    function restartGame() {
-        currentQuestion = 0;
-        userChoices = [];
-        document.getElementById('quiz-section').style.display = 'block';
-        document.getElementById('pb-container').style.display = 'block';
-        document.getElementById('game-container').style.backgroundColor = '#2d2d2d';
-        document.getElementById('game-container').style.boxShadow = '0 10px 30px rgba(0,0,0,0.8)';
-        document.getElementById('result-section').style.display = 'none';
-        renderQuestion();
-    }
-
-    renderQuestion();
 </script>
 
 </body>
